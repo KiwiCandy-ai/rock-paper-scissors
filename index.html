@@ -29,39 +29,15 @@ console.log(getComputerChoice(3))
 // return variable based on number fromm rock, paper, scissors variable 
 
 // // Prompt for human input 
-let getHumanChoice = prompt("Rock, Paper or Scissors?")
+
 
 // Make human choice variable case insensitive
-getHumanChoice = getHumanChoice.toLowerCase();
-console.log(getHumanChoice);
+
 // // Return result `
 
 // // Set 2 x variables for score and give each initial value of 0
-let humanScore = 0;
-let computerScore = 0;
+
 // // Create new function playRound - 2 x parameters 
-
-function playRound(humanChoice, computerChoice) {
-    if (getHumanChoice == getComputerChoice) {
-        console.log("It's a tie!");
-    } else if (getHumanChoice == rock && getComputerChoice == scissors) {
-        console.log("You win, rock beats scissors!");
-    } else if (getHumanChoice == scissors && getComputerChoice == paper) {
-        rconsole.log("You win, scissors beats paper!");
-    } else if (getHumanChoice == paper && getComputerChoice == rock) {
-        console.log("You win, paper beats rock!"); 
-    } else if (getHumanChoice == rock && getComputerChoice == paper) {
-        console.log("You lose, rock beats paper");
-    } else if (getHumanChoice == scissors && getComputerChoice == rock) {
-        console.log("You lose, rock beats scissors");
-    } else if (getHumanChoice == paper && getComputerChoice == scissors) {
-        console.log("You lose, scissors beats paper");
-}
-}
-
-
-
-
 // Return result 
 // if computer is winner increase score by +1 else 0
 // if human is winner increase score by +1 else 0
