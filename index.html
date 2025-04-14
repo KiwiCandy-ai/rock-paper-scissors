@@ -61,8 +61,9 @@ let humanScore = 0;
 let computerScore = 0;
 // Create new function playRound - 2 x parameters 
 function playRound(humanChoice, computerChoice) {
-    computerSelection = getComputerChoice()
+   
     humanSelection = getHumanChoice()
+    computerSelection = getComputerChoice()
 // ask function to compare humanchoice and computer choice 
 // based on comparison display winning or losing message
     if (humanSelection == "rock" && computerSelection == "rock" 
@@ -84,7 +85,7 @@ function playRound(humanChoice, computerChoice) {
         humanScore++
         console.log("You " + humanScore)
     } else if (humanSelection == "rock" && computerSelection == "paper") {
-        console.log("You lose, rock beats paper");
+        console.log("You lose, paper beats rock");
         computerScore++
         console.log("Computer " + computerScore)
     } else if (humanSelection == "scissors" && computerSelection == "rock") {
@@ -97,13 +98,27 @@ function playRound(humanChoice, computerChoice) {
         console.log("Computer " + computerScore)
 }   
 }
-
+// call playround 5 times
+console.log("Round 1")
 playRound(humanSelection, computerSelection);
+console.log("Round 2")
 playRound(humanSelection, computerSelection);
+console.log("Round 3")
 playRound(humanSelection, computerSelection);
+console.log("Round 4")
 playRound(humanSelection, computerSelection);
+console.log("Round 5")
 playRound(humanSelection, computerSelection);
 
+// display winning message 
+if (computerScore>humanScore) {
+    console.log("You lose! Computer " + computerScore + " " + "You " +
+    humanScore)
+} else if (computerScore<humanScore) {
+console.log("You win! You " + humanScore + " " + "Computer " + computerScore)
+} else if (computerScore ==  humanScore) {
+    console.log("Its a tie! You " + humanScore + " " + "Computer " + computerScore)
+}
 
 
 
@@ -111,8 +126,7 @@ playRound(humanSelection, computerSelection);
 
 
 
-// create new function playgame 
-// copy playround function and score variables 
+
 
 // call playround 5 times
 
