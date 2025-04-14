@@ -11,37 +11,104 @@
 // Rock, Paper, Scissors
 
 // // Create rock variable
-const rock = 0
 // create paper variable
-const paper = 1
 // create scissors variable
-const scissors = 2
+
 
 // Assign numbers to variables 
 
 // Create computer choice function
-function getComputerChoice(max) {
-    return Math.floor(Math.random() * max);
+function getRandomItem(arr) {
+    const index = Math.floor(Math.random() * arr.length);
+    return arr[index];
 }
-console.log(getComputerChoice(3))
+
+const options = ["rock", "paper", "scissors"]
+
+
+function getComputerChoice() {
+    const random = getRandomItem(options);
+    console.log("Computer " + random);
+    return random;
+}
 
 // pick random number from 0 - 2
 // return variable based on number fromm rock, paper, scissors variable 
 
-// // Prompt for human input 
-let getHumanChoice = prompt("Rock, Paper or Scissors?")
 
-// Make human choice variable case insensitive
-getHumanChoice = getHumanChoice.toLowerCase();
-console.log(getHumanChoice);
-// // Return result `
+// Prompt for human input 
 
-// // Set 2 x variables for score and give each initial value of 0
+   
+function getHumanChoice() {
+    let answer = prompt("Rock, Paper, Scissors?")
+    console.log("You " + answer);
+    // Make human choice variable case insensitive
+    answer = answer.toLowerCase();
+    return answer;
+}
 
-// // Create new function playRound - 2 x parameters 
-// Return result 
-// if computer is winner increase score by +1 else 0
+
+// Set 2 x variables for score and give each initial value of 0
+
+
+
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+
+
+// function playGame(humanSelection, computerSelection) 
+let humanScore = 0;
+let computerScore = 0;
+// Create new function playRound - 2 x parameters 
+function playRound(humanChoice, computerChoice) {
+    computerSelection = getComputerChoice()
+    humanSelection = getHumanChoice()
+// ask function to compare humanchoice and computer choice 
+// based on comparison display winning or losing message
+    if (humanSelection == "rock" && computerSelection == "rock" 
+    || humanSelection == "paper" && computerSelection == "paper"
+    || humanSelection == "scissors" && computerSelection == "scissors") {
+        console.log("It's a tie!");
+    } else if (humanSelection == "rock" && computerSelection == "scissors") {
+        console.log("You win, rock beats scissors!");
+        // if computer is winner increase score by +1 else 0
 // if human is winner increase score by +1 else 0
+        humanScore++
+        console.log("You " + humanScore)
+    } else if (humanSelection == "scissors" && computerSelection == "paper") {
+        console.log("You win, scissors beats paper!");
+        humanScore++
+        console.log("You " + humanScore)
+    } else if (humanSelection == "paper" && computerSelection == "rock") {
+        console.log("You win, paper beats rock!"); 
+        humanScore++
+        console.log("You " + humanScore)
+    } else if (humanSelection == "rock" && computerSelection == "paper") {
+        console.log("You lose, rock beats paper");
+        computerScore++
+        console.log("Computer " + computerScore)
+    } else if (humanSelection == "scissors" && computerSelection == "rock") {
+        console.log("You lose, rock beats scissors");
+        computerScore++
+        console.log("Computer " + computerScore)
+    } else if (humanSelection == "paper" && computerSelection == "scissors") {
+        console.log("You lose, scissors beats paper");
+        computerScore++
+        console.log("Computer " + computerScore)
+}   
+}
+
+playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection);
+
+
+
+
+
+
 
 
 // create new function playgame 
@@ -49,6 +116,6 @@ console.log(getHumanChoice);
 
 // call playround 5 times
 
-    </script>
+   </script>
 </body>
 </html>
