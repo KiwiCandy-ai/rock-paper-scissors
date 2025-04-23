@@ -30,5 +30,10 @@ body {
 }
 
 #rock {
-    padding-top: 20px
+    padding-top: 12px
+}
+
+
+#scissors {
+    padding-top: 5px;
 }
