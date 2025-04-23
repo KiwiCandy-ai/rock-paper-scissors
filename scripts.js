@@ -90,8 +90,10 @@ document.body.appendChild(displayDiv)
 const newContent = document.createTextNode('Results:')
 displayDiv.appendChild(newContent);
 const para = document.createElement('p')
+para.textContent = ('Select icon to start the game')
 displayDiv.appendChild(para)
 const scores = document.createElement('p')
+scores.textContent = 'You: 0 Computer: 0'
 displayDiv.appendChild(scores)
 
 
