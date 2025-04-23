@@ -3,133 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <script>
-
-// Rock, Paper, Scissors
-
-// // Create rock variable
-// create paper variable
-// create scissors variable
-
-
-// Assign numbers to variables 
-
-// Create computer choice function
-function getRandomItem(arr) {
-    const index = Math.floor(Math.random() * arr.length);
-    return arr[index];
-}
-
-const options = ["rock", "paper", "scissors"]
-
-
-function getComputerChoice() {
-    const random = getRandomItem(options);
-    console.log("Computer " + random);
-    return random;
-}
-
-// pick random number from 0 - 2
-// return variable based on number fromm rock, paper, scissors variable 
-
-
-// Prompt for human input 
-
-   
-function getHumanChoice() {
-    let answer = prompt("Rock, Paper, Scissors?")
-    console.log("You " + answer);
-    // Make human choice variable case insensitive
-    answer = answer.toLowerCase();
-    return answer;
-}
-
-
-// Set 2 x variables for score and give each initial value of 0
-
-
-
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-
-
-// function playGame(humanSelection, computerSelection) 
-let humanScore = 0;
-let computerScore = 0;
-// Create new function playRound - 2 x parameters 
-function playRound(humanChoice, computerChoice) {
-   
-    humanSelection = getHumanChoice()
-    computerSelection = getComputerChoice()
-// ask function to compare humanchoice and computer choice 
-// based on comparison display winning or losing message
-    if (humanSelection == "rock" && computerSelection == "rock" 
-    || humanSelection == "paper" && computerSelection == "paper"
-    || humanSelection == "scissors" && computerSelection == "scissors") {
-        console.log("It's a tie!");
-    } else if (humanSelection == "rock" && computerSelection == "scissors") {
-        console.log("You win, rock beats scissors!");
-        // if computer is winner increase score by +1 else 0
-// if human is winner increase score by +1 else 0
-        humanScore++
-        console.log("You " + humanScore)
-    } else if (humanSelection == "scissors" && computerSelection == "paper") {
-        console.log("You win, scissors beats paper!");
-        humanScore++
-        console.log("You " + humanScore)
-    } else if (humanSelection == "paper" && computerSelection == "rock") {
-        console.log("You win, paper beats rock!"); 
-        humanScore++
-        console.log("You " + humanScore)
-    } else if (humanSelection == "rock" && computerSelection == "paper") {
-        console.log("You lose, paper beats rock");
-        computerScore++
-        console.log("Computer " + computerScore)
-    } else if (humanSelection == "scissors" && computerSelection == "rock") {
-        console.log("You lose, rock beats scissors");
-        computerScore++
-        console.log("Computer " + computerScore)
-    } else if (humanSelection == "paper" && computerSelection == "scissors") {
-        console.log("You lose, scissors beats paper");
-        computerScore++
-        console.log("Computer " + computerScore)
-}   
-}
-// call playround 5 times
-console.log("Round 1")
-playRound(humanSelection, computerSelection);
-console.log("Round 2")
-playRound(humanSelection, computerSelection);
-console.log("Round 3")
-playRound(humanSelection, computerSelection);
-console.log("Round 4")
-playRound(humanSelection, computerSelection);
-console.log("Round 5")
-playRound(humanSelection, computerSelection);
-
-// display winning message 
-if (computerScore>humanScore) {
-    console.log("You lose! Computer " + computerScore + " " + "You " +
-    humanScore)
-} else if (computerScore<humanScore) {
-console.log("You win! You " + humanScore + " " + "Computer " + computerScore)
-} else if (computerScore ==  humanScore) {
-    console.log("Its a tie! You " + humanScore + " " + "Computer " + computerScore)
-}
-
-
-
-
-
-
-
-
-
-// call playround 5 times
-
-   </script>
+    <div class="buttons">
+    <input type="image" id="rock" src="rock.png" alt="rock" width="200px">
+    <input type="image" id="paper" src="paper.png" alt="paper" width="200px">
+    <input type="image" id="scissors" src="scissors.png" alt="scissors" width="250px">
+</div>
+    
 </body>
 </html>

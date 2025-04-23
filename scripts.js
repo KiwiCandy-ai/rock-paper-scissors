@@ -36,12 +36,18 @@ let computerScore = 0;
 
 function updateResults() {
     if (humanScore === 5) {
-        para.textContent = ('You win! You ' + humanScore + ' ' + 'Computer ' + computerScore);
+        scores.textContent = ('Game over! You win! You ' + humanScore + ' ' + 'Computer ' + computerScore);
+        humanScore = 0
+        computerScore = 0
     } else if (computerScore === 5){
-        para.textContent = ('You lose! Computer ' + computerScore + ' ' + 'You ' +
+        scores.textContent = ('Game over! You lose! Computer ' + computerScore + ' ' + 'You ' +
         humanScore)
+        humanScore = 0
+        computerScore = 0
+    } 
+    return humanScore + computerScore
     }
-    }
+
 
 
 function playRound(humanSelection, computerSelection) {
@@ -50,21 +56,27 @@ function playRound(humanSelection, computerSelection) {
         } else if (humanSelection == 'rock' && computerSelection == 'scissors') {
             para.textContent =('You win, rock beats scissors!');
             humanScore++
+            scores.textContent = ('You: ' + humanScore + ' Computer: ' + computerScore);
         } else if (humanSelection == 'scissors' && computerSelection == 'paper') {
             para.textContent =('You win, scissors beats paper!');
             humanScore++
+            scores.textContent = ('You: ' + humanScore + ' Computer: ' + computerScore)
         } else if (humanSelection == 'paper' && computerSelection == 'rock') {
             para.textContent =('You win, paper beats rock!'); 
             humanScore++
+            scores.textContent = ('You: ' + humanScore + ' Computer: ' + computerScore)
         } else if (humanSelection == 'rock' && computerSelection == 'paper') {
             para.textContent =('You lose, paper beats rock');
             computerScore++
+            scores.textContent = ('You: ' + humanScore + ' Computer: ' + computerScore)
         } else if (humanSelection == 'scissors' && computerSelection == 'rock') {
             para.textContent =('You lose, rock beats scissors');
             computerScore++
+            scores.textContent = ('You: ' + humanScore + ' Computer: ' + computerScore)
         } else if (humanSelection == 'paper' && computerSelection == 'scissors') {
             para.textContent =('You lose, scissors beats paper');
             computerScore++
+            scores.textContent = ('You: ' + humanScore + ' Computer: ' + computerScore)
     }
     updateResults()
     }
@@ -79,4 +91,9 @@ const newContent = document.createTextNode('Results:')
 displayDiv.appendChild(newContent);
 const para = document.createElement('p')
 displayDiv.appendChild(para)
+const scores = document.createElement('p')
+displayDiv.appendChild(scores)
+
+
+
 
