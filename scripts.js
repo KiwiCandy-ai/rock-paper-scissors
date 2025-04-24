@@ -83,8 +83,9 @@ function playRound(humanSelection, computerSelection) {
 
 
 
-
-
+const title = document.createElement('h1')
+document.body.appendChild(title)
+title.textContent = 'Rock, Paper, Scissors'
 const displayDiv = document.createElement('div')
 document.body.appendChild(displayDiv)
 const newContent = document.createTextNode('Results:')
